@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+/* line 15, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+#footer {
+  background: #12A0FB;
+  padding: 10px;
+  color: white;
+  margin-top: 100px;
+}
+
+/* line 22, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.nav-link {
+  padding: .25rem 0;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.nav-link:hover, .nav-link:focus {
+  border-bottom-color: white;
+}
+
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.font_white {
+  color: white;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.comments {
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: #ededed;
+  margin: 1em 0;
+  padding: 1em;
+}
+/* line 53, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.comments h2 {
+  margin: 0 0 .5em;
+}
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.comments ul {
+  padding-left: 1.5em;
+}
+/* line 58, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.comments ul li {
+  margin-bottom: 0.5em;
+}

@@ -1,0 +1,166 @@
+<body class="home_gray">
+<div class="board hidden-xs-down" style="background: url('/img/title_img.jpg') no-repeat center center/cover scroll;"><span style="color: white; background:rgba(0,0,0,0.6); padding: 10px; border-radius: 10px;"><%= link_to "#{@user.nickname}", "/users/#{current_user.id}", class: "board_title" %></span></div>
+<div class="board_mobile hidden-sm-up" style="background: url('/img/title_img.jpg') no-repeat center center/cover scroll;"><span style="color: white; background:rgba(0,0,0,0.6); padding: 10px; border-radius: 10px;"><%= link_to "#{@user.nickname}", "/users/#{current_user.id}", class: "board_title" %></span></div>
+<% #경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+<% if alert %>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #FF4B5C; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= alert %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% elsif notice %>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #43AC6A; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+<% end %>
+
+<div class="container">
+    <center>
+        <div class="col-12 col-sm-10 col-md-10 main_board" style="margin-top: 30px; padding: 20px; text-align: left">
+        <font size="5px;" style="font-weight: bold">닉네임</font><hr width="300px;" align="left" style="border: none; border-bottom: 2px solid grey;"/>
+        <%= @user.nickname %>
+        </div>
+        
+        <div class="col-12 col-sm-10 col-md-10 main_board" style="margin-top: 30px; padding: 20px; text-align: left">
+        <font size="5px;" style="font-weight: bold">내가 선택한 반려화분</font><hr width="300px;" align="left" style="border: none; border-bottom: 2px solid grey;"/>
+        <p>반려화분에 대한 설정은 '<b><%= link_to "정보 수정", "/users/edit", method: :get %></li></b>'에서 가능합니다.</p>
+        
+        <% #스투키 %>
+        <% if @user.flowers_stuckyi == true %>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5">
+                <a href="/flowers/stuckyi"><img class="hidden-sm-down" width="250px;" src="/img/stuckyi_1.png"></a>
+                <center><a href="/flowers/stuckyi"><img class="hidden-md-up" width="250px;" src="/img/stuckyi_1.png"></a></center>
+            </div>
+            
+            <div class="col-12 col-sm-12 col-md-7">
+            <div class="hidden-md-up" style="margin-top: 20px;"></div>
+            
+            <!-- 부트스트랩 : 토글 탭 -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="badge badge-pill badge-info active" data-toggle="tab" href="#stuckyi" role="tab" style="color: white; padding: 5px 10px 5px 10px;">스투키는?</a>
+              </li>
+              <li class="nav-item">
+                <a class="badge badge-pill badge-info" data-toggle="tab" href="#stuckyi_watering" role="tab" style="color: white; padding: 5px 10px 5px 10px; margin-left: 10px;">분무 시기</a>
+              </li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            <div style="margin-top: 10px;"></div>
+                <div class="tab-pane fade show active" id="stuckyi" role="tabpanel">
+                <br>
+                <p>
+                    스투키는 공기정화 식물로서 강력한 공기정화 능력을 가지고 있고 <br>많은 산소와 음이온 발생, 전자파 차단을 할 수 있는 뛰어난 반려식물입니다.
+                </p>
+                </div>
+                
+                <div class="tab-pane fade" id="stuckyi_watering" role="tabpanel">
+                <br>
+                <p>
+                    보통은 한 달에 한번!<br/>
+                    흙이 충분히 말랐을 때 틈틈히 촉촉할만큼 분무해주세요.<br/>
+                </p>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px;"></div>
+        <% end %>
+        
+        <% #해마리아 %>
+        <% if @user.flowers_haemaria == true %>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5">
+                <a href="/flowers/haemaria"><img class="hidden-sm-down" width="250px;" src="/img/Haemaria_1.png"></a>
+                <center><a href="/flowers/haemaria"><img class="hidden-md-up" width="250px;" src="/img/Haemaria_1.png"></a></center>
+            </div>
+        
+            <div class="col-12 col-sm-12 col-md-7">
+            <div class="hidden-md-up" style="margin-top: 20px;"></div>
+        
+            <!-- 부트스트랩 : 토글 탭 -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="badge badge-pill badge-success active" data-toggle="tab" href="#haemaria" role="tab" style="color: white; padding: 5px 10px 5px 10px;">해마리아는?</a>
+              </li>
+              <li class="nav-item">
+                <a class="badge badge-pill badge-success" data-toggle="tab" href="#haemaria_watering" role="tab" style="color: white; padding: 5px 10px 5px 10px; margin-left: 10px;">분무 시기</a>
+              </li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            <div style="margin-top: 10px;"></div>
+                <div class="tab-pane fade show active" id="haemaria" role="tabpanel">
+                <br>
+                <p>
+                    해마리아는 자주색이 살짝 섞인 우아한 블랙컬러가 돋보이는 식물로서 <br> 성장 속도가 느리고 단촐한 스타일로 특별한 신경을 쓰지 않아도<br> 잘 자라는 성격의 소유자입니다.<br/>
+                </p>
+                </div>
+                
+                <div class="tab-pane fade" id="haemaria_watering" role="tabpanel">
+                <br>
+                <p>
+                    뿌리가 젖을 경우 썩어버릴 염려가 있으므로 흙이 마르면 촉촉해질만큼 <br>한번씩 물을 주면 됩니다.<br/>
+                </p>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px;"></div>
+        <% end %>
+        
+        <% #틸란드시아 %>
+        <% if @user.flowers_tillandsia == true %>
+        <div class="row">
+        <div class="col-12 col-sm-12 col-md-5">
+            <a href="/flowers/tillandsia"><img class="hidden-sm-down" width="250px;" src="/img/Tillandsia_1.png"></a>
+            <center><a href="/flowers/tillandsia"><img class="hidden-md-up" width="250px;" src="/img/Tillandsia_1.png"></a></center>
+        </div>
+        
+            <div class="col-12 col-sm-12 col-md-7">
+            <div class="hidden-md-up" style="margin-top: 20px;"></div>
+            
+            <!-- 부트스트랩 : 토글 탭 -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="badge badge-pill badge-warning active" data-toggle="tab" href="#tillandsia_" role="tab" style="color: white; padding: 5px 10px 5px 10px;">틸란드시아는?</a>
+              </li>
+              <li class="nav-item">
+                <a class="badge badge-pill badge-warning" data-toggle="tab" href="#tillandsia__watering" role="tab" style="color: white; padding: 5px 10px 5px 10px; margin-left: 10px;">분무 시기</a>
+              </li>
+
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            <div style="margin-top: 10px;"></div>
+                <div class="tab-pane fade show active" id="tillandsia_" role="tabpanel">
+                <br>
+                <p>
+                    틸란드시아는 흙에 심지 않아도 자라는 공중식물로서 공기중에 있는 수분과 <br>먼지를 먹고 자라며 밤에는 산소를 내뿜는 좋은 친구입니다.<br/>
+                </p>
+                </div>
+                
+                <div class="tab-pane fade" id="tillandsia__watering" role="tabpanel">
+                <br>
+                <p>
+                    물 속에 30분정도 담근 후 거꾸로 들어서 물기를 충분히 털어줘야하며 <br>겨울에는 주 2회, 여름에는 주 1회 물을 주면 됩니다.<br/>
+                </p>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px;"></div>
+        <% end %>
+        
+        </div>
+        <div style="margin-top: 100px;"></div>
+    </center>
+</div>
+</body>

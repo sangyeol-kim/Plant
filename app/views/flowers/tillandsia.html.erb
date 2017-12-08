@@ -1,0 +1,51 @@
+<% #경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+  <% if alert %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #FF4B5C; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= alert %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% elsif notice %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #43AC6A; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% else %>
+    <div style="margin-top: 30px;">&nbsp</div>
+  <% end %>
+  
+<div class="container">
+    <p style="font-family: Nanum Pen Script; font-size: 100px; margin-top: 20px;" align="center">틸란드시아</p>
+    <hr width="100px;" style="margin-top: -40px;"/>
+    <p style="margin-bottom: -10px;"><center>Tillandsia</center></p>
+</div>
+
+    <div class="hidden-xs-down" style="background: url('/img/main_tillandsia.png') no-repeat center center/cover scroll; background-size: 100% 100%; padding-top: 400px;"></div>
+    <div class="hidden-sm-up" style="background: url('/img/main_tillandsia.png') no-repeat center center/cover scroll; background-size: 100% 100%; padding-top: 150px; margin-top: 50px;"></div>
+
+<div class="container">     
+    <div style="margin-top: 30px;"></div>
+    <div class="col-12 col-sm-10 col-md-10">
+    <font class="hidden-xs-down" size="10px;" style="font-weight: bold">소개</font>
+    <font class="hidden-sm-up" size="6px;" style="font-weight: bold">소개</font>
+    <hr width="150px;" align="left" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/>
+    <ul>
+        <li>틸란드시아는 흙에 심지 않아도 자라는 공중식물입니다.</li>
+        <li>공기 중에 있는 수분과 먼지를 먹고 자라기 때문에 실내 공기 청정역할을 합니다.</li>
+        <li>밤에는 산소를 뿜어내어 산소 발생률이 높은 식물입니다.</li>
+    </ul> 
+    </div>
+
+    <div style="margin-top: 50px;"></div>
+    <div align="right">
+        <font class="hidden-xs-down" size="10px;" style="font-weight: bold"><i class="fa fa-tint" aria-hidden="true"></i> 물 줘야 하는 시기 <hr width="450px;" align="right" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/></font>
+        <font class="hidden-sm-up" size="6px;" style="font-weight: bold"><i class="fa fa-tint" aria-hidden="true"></i> 물 줘야 하는 시기 <hr width="280px;" align="right" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/></font>
+    <ul>
+        <li>물 속에 30분정도 담근 후 거꾸로 들어서 물기를 털어줘야 합니다.</li>
+        <li>물 주기는 겨울에는 주 2회, 여름에는 주 1회면 충분합니다.</li>
+        <li>장마때는 환풍에 신경써야 하며 직사광선은 피해주세요.</li>
+    </ul> 
+    </div>
+    <div style="margin-top: 100px;"></div>
+</div>

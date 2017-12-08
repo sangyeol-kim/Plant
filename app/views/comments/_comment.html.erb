@@ -1,0 +1,26 @@
+<div id="comment_<%=comment.id %>">
+    <div class="row">
+        <div class="col-6 col-sm-3 col-md-2 etc">
+        <%= comment.user != nil ? User.find(comment.user_id).nickname : comment.user_name %>
+        </div>
+        
+        <div class="col-0 col-sm-8 col-md-9 hidden-xs-down">
+            <span class="badge badge-pill badge-default" style="padding: 1"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %> ]</span>
+        </div>
+        <div class="col-4 hidden-sm-up">
+            <span class="badge badge-pill badge-default" style="padding: 1"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(comment.created_at) %>전</span>
+        </div>
+        
+        <div class="col-2 col-sm-1 col-md-1">
+        <% if can? :destroy, comment %>
+            <%= link_to "", [comment.post, comment], method: :delete, remote: true, data: { confirm: "정말로 지우시겠습니까?" }, class: "fa fa-times" %>
+        <% end %>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+    <div class="col-12 col-sm-12 col-md-12">
+    <%= comment.body %>
+    <hr/>
+    </div>
+    </div>
+</div>

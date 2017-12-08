@@ -1,0 +1,74 @@
+<div class="board hidden-xs-down" style="background: url('/img/title_img.jpg') no-repeat center center/cover scroll;"><span style="color: white; background:rgba(0,0,0,0.6); padding: 10px; border-radius: 10px;"><%= link_to "문의 게시판", posts_path, class: "board_title" %></span></div>
+<div class="board_mobile hidden-sm-up" style="background: url('/img/title_img.jpg') no-repeat center center/cover scroll;"><span style="color: white; background:rgba(0,0,0,0.6); padding: 10px; border-radius: 10px;"><%= link_to "문의 게시판", posts_path, class: "board_title" %></span></div>
+
+<% #경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+<% if alert %>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #FF4B5C; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= alert %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% elsif notice %>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #43AC6A; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+<% end %>
+
+<div class="container" style="margin-top:30px; margin-bottom: 100px;">
+<div class="hidden-xs-down">
+  <p class="badge badge-pill badge-success offset-md-1"><i class="fa fa-clock-o" aria-hidden="true"></i> 현재 시간 </span> <span><%= Time.zone.now.strftime('%Y-%m-%d %H:%M:%S') %></p>
+</div>
+<center>
+<div class="row">
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-0 col-sm-0 col-md-1 offset-md-1 hidden-sm-down" align="center">No.</div>
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-3 col-sm-2 col-md-2" align="center">작성자</div>
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-6 col-sm-4 col-md-3" align="center">제목</div>
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-1 col-sm-1 col-md-1" align="center"></div>
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-0 col-sm-3 col-md-2 hidden-xs-down" align="center">작성시간</div>
+<div style="padding: 10px 10px 10px 10px; border-bottom: 3px solid #D5D5D5; background: #EFEFEF;" class="col-2 col-sm-2 col-md-1" align="center">조회수</div>
+<div class="col-md-1 hidden-sm-down"></div>
+</div>
+<% if @posts.empty? %>
+    <h2 class="text-center" style="margin-top: 30px;">게시글이 없습니다.</h2>
+<% else %>
+<div style="margin-top: 5px;"></div>
+  <% @posts.each do |post| %>
+    <div class="row">
+    <% # 글 번호 %>
+    <div align="center" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-0 col-sm-0 col-md-1 offset-md-1 hidden-sm-down"><%= post.id %></div>
+        
+    <% # 닉네임 %>
+    <div align="center" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-3 col-sm-2 col-md-2 etc"><%= post.user != nil ? post.user.nickname : post.user_name %></div>
+          
+    <% # 게시글 제목 %>
+    <div align="left" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-4 col-sm-4 col-md-3 etc">
+      <%= link_to post do %>
+      <%= content_tag(:div, post.title, class: "board_title_etc") %>
+      <% end %>
+    </div>
+    
+    <% # 댓글 %>
+    <div align="right" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-3 col-sm-1 col-md-1">
+    <% if post.comments.count == 0 %>
+    <div class="badge badge-default">답변대기</div>
+    <% else %>
+    <div class="badge badge-success">답변완료</div>
+    <% end %>
+    </div>
+    <% # 시간 %>
+    <div align="center" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-0 col-sm-3 col-md-2 hidden-xs-down"><%= "#{time_ago_in_words(post.created_at)} 전" %></div>
+        
+    <% # 조회수 %>
+    <div align="center" style="padding: 10px 10px 10px 10px; border-bottom: 1px solid gray;" class="col-2 col-sm-2 col-md-1"><%= "#{post.unique_impression_count}" %></div>
+  </div>
+  <div class="col-md-1 hidden-sm-down"></div>
+  <% end %>
+<% end %>
+<br>
+<div class="offset-8 offset-sm-10 offset-md-9"><%= link_to '문의 하기', new_post_path, style: "background-color: #778899; color: white", class: "btn btn-secondary" %></div>
+
+<div class="d-flex flex-column", style="margin-bottom: 100px;">
+  <%= paginate @posts %>
+</div>
+
+</div>

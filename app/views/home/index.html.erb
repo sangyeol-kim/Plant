@@ -1,0 +1,59 @@
+<% #경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+  <% if alert %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #FF4B5C; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= alert %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% elsif notice %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #43AC6A; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% else %>
+    <div style="margin-top: 30px;">&nbsp</div>
+  <% end %>
+
+  <% #메인사진 : PC Ver. %>
+  <div class="main hidden-md-down" style="background: url('/img/main.jpg') no-repeat center center/cover scroll; padding: 200px 0px 150px 0px;"></div>
+  <% #메인사진 : 모바일 Ver. %>
+  <div class="hidden-lg-up" style="background: url('/img/main(m).jpg'); background-repeat: no-repeat; background-size: 100%; padding: 200px 0px 150px 0px;"></div>
+  
+  <div class="container" align="center">
+    <% #PC View %>
+    <div class="hidden-md-down" style="margin-top: 20px;">
+      <div class="fade-anim">
+        <span>
+          <font size="10px;" color="#525252">어떤 화분을 키우세요?</font>
+          <hr width="250px;" style="border: none; border-bottom: 2px solid grey; margin-bottom: 50px;"/>
+        </span>
+        <span><a href="/flowers/stuckyi"><img border="0" width="300px;" src="/img/stuckyi_1.png" onmouseover="this.src='/img/stuckyi_2.png'" onmouseout="this.src='/img/stuckyi_1.png'"></a></span>
+        <span><a href="/flowers/haemaria"><img border="0" width="300px;" src="/img/Haemaria_1.png" onmouseover="this.src='/img/Haemaria_2.png'" onmouseout="this.src='/img/Haemaria_1.png'"></a></span>
+        <span><a href="/flowers/tillandsia"><img border="0" width="300px;" src="/img/Tillandsia_1.png" onmouseover="this.src='/img/Tillandsia_2.png'" onmouseout="this.src='/img/Tillandsia_1.png'"></a></span>
+      </div>
+    </div>
+    
+    <% #Mobile View %>
+    <div class="hidden-lg-up" style="margin-top: -40px;">
+      <font size="5px;" color="#525252">어떤 화분을 키우세요?</font>
+      <hr width="150px;" style="border: solid 1px dimgrey; margin-bottom: 40px;"/>
+      <a href="/flowers/stuckyi"><img class="hidden-lg-up" border="0" width="100px;" src="/img/stuckyi_1.png" onmouseover="this.src='/img/stuckyi_2.png'" onmouseout="this.src='/img/stuckyi_1.png'"></a>
+      <a href="/flowers/haemaria"><img class="hidden-lg-up" border="0" width="100px;" src="/img/Haemaria_1.png" onmouseover="this.src='/img/Haemaria_2.png'" onmouseout="this.src='/img/Haemaria_1.png'"></a>
+      <a href="/flowers/tillandsia"><img class="hidden-lg-up" border="0" width="100px;" src="/img/Tillandsia_1.png" onmouseover="this.src='/img/Tillandsia_2.png'" onmouseout="this.src='/img/Tillandsia_1.png'"></a>
+    </div>
+  </div>
+  
+  <div style="margin-top: 50px;"></div>
+  
+  <div style="background-color: #1bd8a9; padding: 20px 0px 20px 0px;">
+    <div class="container">
+      <p style="color: white; font-size: 30px;"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> 궁금하신게 있으신가요?</p>
+      <p align="right" style="color: white; font-size: 14px; margin-top: 10px;">
+        화분에 대한 문의는 아래 버튼을 통해 이용하실 수 있습니다.<br/>
+        질문사항이 있으시면 언제든지 문의 게시판을 이용해주세요.<br/>
+        <a href="/posts" class="btn btn-success" style="margin-top: 30px;">문의하기</a>
+      </p>
+    </div>
+  </div>
+</div>

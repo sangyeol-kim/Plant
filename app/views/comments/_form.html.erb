@@ -1,0 +1,21 @@
+<div class="d-flex flex-column">
+  <nav aria-label="Page navigation" class="align-self-center">
+    <%= paginate @comments %>
+  </nav>
+</div>
+
+<% if can? :create, comment %>
+<div id="comments_form_<%=comment.post.id%>">
+  <%= form_with(model: [comment.post, comment], label: false) do |f| %>
+    <div class='form-inputs'>
+      <%= f.text_area :body, class: "form-control", rows: "3", placeholder: '마음의 상처를 입히는 댓글은 피해주세요..ㅠ_ㅠ' %>
+      <% f.number_field :user_id %>
+    </div>
+    <div class="form-actions" align="right" style="margin-top: 20px;">
+      <%= f.button :댓글작성, class: "btn btn-info" %>
+    </div>
+  <% end %>
+</div>
+<% else %>
+<p align="right">관리자만 답변을 할 수 있습니다.</p>
+<% end %>

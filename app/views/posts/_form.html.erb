@@ -1,0 +1,17 @@
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="form-inputs">
+    <%= f.label :제목 %>
+    <%= f.text_field :title, id: :post_title, class: "form-control no-border" %><br/>
+    <%= f.label :내용 %>
+    <%= tinymce :language => "ko" %>
+    <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
+    <% f.number_field :user_id %>
+  </div>
+  
+  <center>
+  <div class="form-actions" style="margin-top: 20px;">
+    <%= f.button :글쓰기, class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to '목록', posts_path, class: "btn btn-secondary" %>
+  </div>
+  </center>

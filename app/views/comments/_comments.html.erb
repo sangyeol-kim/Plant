@@ -1,0 +1,11 @@
+<div class="comments">
+  <div class="comment_header">
+    <h5><i class="fa fa-commenting-o" aria-hidden="true"></i> 답변</h5>
+  </div>
+  <div class="comments_list">
+    <%= render "comments/list" %>
+  </div>
+  <div class='comments_form'>
+    <%= render "comments/form", comment: @post.comments.new %>
+  </div>
+</div>

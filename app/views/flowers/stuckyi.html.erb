@@ -1,0 +1,53 @@
+<% #경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+  <% if alert %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #FF4B5C; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= alert %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% elsif notice %>
+    <div style="margin-top: 30px;">&nbsp</div>
+    <div class="alert alert-danger tlert-dismissible fade show text-center" style="padding: 10px; background-color: #43AC6A; color: white; border-radius: 0; margin-bottom: 0; border: 0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <% else %>
+    <div style="margin-top: 30px;">&nbsp</div>
+  <% end %>
+  
+<div class="container">
+    <p style="font-family: Nanum Pen Script; font-size: 100px; margin-top: 20px;" align="center">스투키</p>
+    <hr width="100px;" style="margin-top: -40px;"/>
+    <p style="margin-bottom: -10px;"><center>stuckyi</center></p>
+</div>
+
+    <div class="hidden-xs-down" style="background: url('/img/main_stuckyi.png') no-repeat center center/cover scroll; background-size: 100% 100%; padding-top: 400px;"></div>
+    <div class="hidden-sm-up" style="background: url('/img/main_stuckyi.png') no-repeat center center/cover scroll; background-size: 100% 100%; padding-top: 120px; margin-top: 50px;"></div>
+
+<div class="container">     
+    <div style="margin-top: 30px;"></div>
+    <div class="col-12 col-sm-10 col-md-10">
+    <font class="hidden-xs-down" size="10px;" style="font-weight: bold">소개</font>
+    <font class="hidden-sm-up" size="6px;" style="font-weight: bold">소개</font>
+    <hr width="150px;" align="left" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/>
+    <ul>
+        <li>공기 정화에 탁월한 스투키는 NASA가 선정한 최고의 공기 정화 식물인 산세베리아보다 약 3배의 효과를 가지고 있습니다.</li>
+        <li>전자파 차단 효과기 있어서 TV나 컴퓨터 옆에 두면 좋습니다.</li>
+        <li>밤이 되면 기공이 열리며 산소를 배출하는 스투키는 식물 산소 발생량 1위입니다.</li>
+    </ul>
+    </p>
+    </div>
+
+    <div style="margin-top: 50px;"></div>
+    <div align="right">
+        <font class="hidden-xs-down" size="10px;" style="font-weight: bold"><i class="fa fa-tint" aria-hidden="true"></i> 물 줘야 하는 시기 <hr width="450px;" align="right" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/></font>
+        <font class="hidden-sm-up" size="6px;" style="font-weight: bold"><i class="fa fa-tint" aria-hidden="true"></i> 물 줘야 하는 시기 <hr width="280px;" align="right" style="border: none; border-bottom: 2px solid grey; margin-top: -1px;"/></font>
+        <ul>
+            <li>보통 한달에 한 번 물을 주면 됩니다. 하지만 항상 그렇지는 않습니다.</li>
+            <li>가장 이상적인 물 주기는 흙이 말랐는지 확인하고 충분히 말랐다면 </li>
+            <li>촉촉히 젖을만큼 물을 주면 됩니다.</li>
+        </p>
+        </ul>
+    </div>
+    <div style="margin-top: 100px;"></div>
+</div>

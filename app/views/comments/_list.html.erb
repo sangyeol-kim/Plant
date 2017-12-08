@@ -1,0 +1,5 @@
+<div id="comments_list_<%=@post.id%>", style="margin-top: 20px;">
+<% if @post.comments.size > 0 %>
+    <%= render @comments %>
+<% end %>
+</div>
